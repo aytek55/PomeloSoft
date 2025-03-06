@@ -1,0 +1,6 @@
+@PomeloSoft_HostAddress = http://localhost:5083
+
+GET {{PomeloSoft_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
