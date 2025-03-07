@@ -6,7 +6,7 @@
 		public TrendyolCustomerDto Buyer { get; set; }
 		public List<TrendyolProductDto> Products { get; set; }
 		public string Status { get; set; } // "Awaiting", "Shipped", "Completed"
-		public string OrderDate { get; set; } // "2025-03-06T12:00:00"
+		public string OrderDate { get; set; }
 	}
 
 	public class TrendyolCustomerDto

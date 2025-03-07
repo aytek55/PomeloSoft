@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PomeloSoft.Models;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace PomeloSoft.PomeloDbContext
 {
@@ -23,8 +21,7 @@ namespace PomeloSoft.PomeloDbContext
 			modelBuilder.Entity<Order>()
 				.HasMany(o => o.Items)
 				.WithOne(i => i.Order)
-				.HasForeignKey(i => i.OrderId)
-				.OnDelete(DeleteBehavior.Cascade); // Sipariş silinirse ürünler de silinir
+				.HasForeignKey(i => i.OrderId);
 		}
 	}
 
