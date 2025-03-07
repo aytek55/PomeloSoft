@@ -1,4 +1,7 @@
 
+using PomeloSoft.PomeloDbContext;
+using Microsoft.EntityFrameworkCore;
+
 namespace PomeloSoft
 {
     public class Program
@@ -7,9 +10,13 @@ namespace PomeloSoft
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+			// Add services to the container.
+			// MSSQL için DbContext'i ekliyoruz
+			builder.Services.AddDbContext<AppDbContext>(options =>
+				options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddControllers();
+
+			builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
